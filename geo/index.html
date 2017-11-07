@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Hola</title>
+        <meta charset="utf-8">
+
+        <style>
+            #map {height: 400px}
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>Hola. Tu posición es:</p>
+            <hr>
+            <ul>
+                <li>Latitud: <span id="lat"></span></li>
+                <li>Longitud: <span id="long"></span></li>
+            </ul>
+            <br>
+            <div id="map"></div>
+            <br>
+            <button id="refresh">Refrescar posición</button>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="main.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBENs6SkMI1_aPA6PsEAKIRGvXENZRfGaI&callback=renderMap"></script>
+    </body>
+</html>
