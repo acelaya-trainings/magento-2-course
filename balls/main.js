@@ -4,7 +4,8 @@ var config = {
         greenBallsCount: 2,
         blueBallsCount: 2
     },
-    $currentDraggingElement;
+    $currentDraggingElement,
+    currentScore = 0;
 
 window.onload = init;
 
@@ -41,12 +42,22 @@ function dropBall (e) {
 
     if (basketClass !== ballClass) {
         alert('Mal!!');
+        decrementScore();
         return;
     }
 
     $currentDraggingElement.remove();
     currentCounter = parseInt(document.getElementsByClassName('basket-count--' + basketClass)[0].innerHTML);
     document.getElementsByClassName('basket-count--' + basketClass)[0].innerHTML = ++currentCounter;
+    incrementScore();
+}
+
+function incrementScore () {
+    document.getElementById('score').innerHTML = ++currentScore;
+}
+
+function decrementScore () {
+    document.getElementById('score').innerHTML = --currentScore;
 }
 
 function renderBalls () {
