@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Don't touch my b****s</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="time-counter">
+            <span>Ellapsed time: </span>
+            <span class="time-counter__value">0</span>s
+        </div>
+
+        <section class="container balls text-center">
+            <div class="balls__ball red" draggable="true" ondragstart="dragBall(event)"></div>
+            <div class="balls__ball red" draggable="true" ondragstart="dragBall(event)"></div>
+            <div class="balls__ball blue" draggable="true" ondragstart="dragBall(event)"></div>
+            <div class="balls__ball green" draggable="true" ondragstart="dragBall(event)"></div>
+            <div class="balls__ball green" draggable="true" ondragstart="dragBall(event)"></div>
+            <div class="balls__ball blue" draggable="true" ondragstart="dragBall(event)"></div>
+        </section>
+        <section class="baskets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="baskets__basket red" ondrop="dropBall(event)" ondragover="event.preventDefault()"></div>
+                        <p class="basket-count basket-count--red">0</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="baskets__basket green" ondrop="dropBall(event)" ondragover="event.preventDefault()"></div>
+                        <p class="basket-count basket-count--green">0</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="baskets__basket blue" ondrop="dropBall(event)" ondragover="event.preventDefault()"></div>
+                        <p class="basket-count basket-count--blue">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="main.js"></script>
+    </body>
+</html>
