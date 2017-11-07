@@ -54,11 +54,13 @@ function dropBall (e) {
 }
 
 function incrementScore () {
-    document.getElementById('score').innerHTML = ++currentScore;
+    currentScore += 50;
+    document.getElementById('score').innerHTML = currentScore;
 }
 
 function decrementScore () {
-    document.getElementById('score').innerHTML = --currentScore;
+    currentScore -= 10;
+    document.getElementById('score').innerHTML = currentScore;
 }
 
 function renderBalls () {
