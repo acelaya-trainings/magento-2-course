@@ -1,8 +1,8 @@
 
 var config = {
-        redBallsCount: 2,
-        greenBallsCount: 2,
-        blueBallsCount: 2
+        redBallsCount: 1,
+        greenBallsCount: 5,
+        blueBallsCount: 7
     },
     $currentDraggingElement,
     currentScore = 0;
@@ -11,6 +11,7 @@ window.onload = init;
 
 function init () {
     initTimer();
+    renderBalls();
 }
 
 function initTimer () {
@@ -61,5 +62,32 @@ function decrementScore () {
 }
 
 function renderBalls () {
+    var random,
+        map = {
+            0: 'red',
+            1: 'green',
+            2: 'blue'
+        },
+        color,
+        total;
 
+    do {
+        random = Math.floor(Math.random() * 3);
+        color = map[random];
+
+        if (config[color + 'BallsCount'] > 0) {
+            renderBall(color);
+            config[color + 'BallsCount']--;
+        }
+        total = Object.values(config).reduce(function (a, b) {return a + b}, 0);
+    } while (total > 0);
+}
+
+function renderBall (color) {
+    var ballNode = document.createElement('div');
+    ballNode.className = 'balls__ball ' + color;
+    ballNode.draggable = true;
+    ballNode.addEventListener('dragstart', dragBall);
+
+    document.getElementsByClassName('balls')[0].appendChild(ballNode);
 }
