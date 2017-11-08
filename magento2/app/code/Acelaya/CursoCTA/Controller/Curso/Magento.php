@@ -16,7 +16,7 @@ class Magento extends Action
      */
     public function execute()
     {
-        echo '<h1>vaya cantidad de mierda hay que crear pa ná</h1>';
+        echo '<h1>Jelou guorl</h1>';
         die();
     }
 }
