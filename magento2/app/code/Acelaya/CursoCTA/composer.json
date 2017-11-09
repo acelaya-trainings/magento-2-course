@@ -1,0 +1,22 @@
+{
+    "name": "acelaya/curso-cta",
+    "description": "A module for stuff",
+    "type": "magento2-module",
+    "require": {
+        "php": "^7.1",
+        "magento/magento-composer-installer": "*",
+        "magento/magento2-base": "^2.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": {
+            "Acelaya\\CursoCTA\\": ""
+        }
+    },
+    "extra": {
+        "map": [
+            ["*", "Acelaya/CursoCTA"]
+        ]
+    }
+}
