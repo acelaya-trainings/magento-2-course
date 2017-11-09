@@ -2,10 +2,23 @@
 namespace Acelaya\CursoCTA\Controller\Curso;
 
 use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\View\Result\PageFactory;
 
 class Magento extends Action
 {
+    /**
+     * @var PageFactory
+     */
+    private $pageFactory;
+
+    public function __construct(Context $context, PageFactory $pageFactory)
+    {
+        parent::__construct($context);
+        $this->pageFactory = $pageFactory;
+    }
+
     /**
      * Execute action based on request and return result
      *
@@ -16,7 +29,8 @@ class Magento extends Action
      */
     public function execute()
     {
-        echo '<h1>Jelou guorl</h1>';
-        die();
+        return $this->pageFactory->create();
+//        echo '<h1>Jelou guorl</h1>';
+//        die();
     }
 }
