@@ -6,8 +6,7 @@
  * Time: 20:19
  */
 
-namespace Acelaya\CursoCTA\Controller\Curso;
-
+namespace Acelaya\CursoCTA\Controller\Adminhtml\Curso;
 
 use Magento\Backend\App\Action;
 use Magento\Framework\App\ResponseInterface;
