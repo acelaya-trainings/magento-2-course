@@ -15,7 +15,10 @@ use Magento\Framework\Model\AbstractModel;
 
 class Noticia extends AbstractModel implements NoticiaInterface, IdentityInterface
 {
-    public const CACHE_TAG = ' CTA_Noticias_Model';
+    public const CACHE_TAG = 'CTA_Noticias_Model';
+
+    protected $_cacheTag = self::CACHE_TAG;
+    protected $_eventPrefix = self::CACHE_TAG;
 
     protected function _construct()
     {

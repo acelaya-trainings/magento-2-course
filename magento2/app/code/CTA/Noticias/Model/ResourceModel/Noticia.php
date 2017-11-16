@@ -8,8 +8,9 @@
 
 namespace CTA\Noticias\Model\ResourceModel;
 
+use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\Model\ResourceModel\Db;
-use Magento\Framework\Stdlib\DateTime;
+use Magento\Framework\Stdlib\DateTime\DateTime;
 
 class Noticia extends Db\AbstractDb
 {
@@ -32,5 +33,24 @@ class Noticia extends Db\AbstractDb
     protected function _construct(): void
     {
         $this->_init('cta_noticias', 'id');
+    }
+
+    public function getNoticiaById($id): array
+    {
+        $adapter = $this->getConnection();
+        $select = $adapter->select()
+                          ->from($this->getMainTable())
+                          ->where('id=:id');
+
+        return $adapter->fetchRow($select, ['id' => (int) $id]);
+    }
+
+    protected function _beforeSave(AbstractModel $object)
+    {
+        $object->setUpdatedAt($this->date->date());
+        if ($object->isObjectNew()) {
+            $object->setCreatedAt($this->date->date());
+        }
+        return parent::_beforeSave($object);
     }
 }

@@ -14,6 +14,10 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
 class Collection extends AbstractCollection
 {
+    protected $_idFieldName = 'id';
+    protected $_eventPrefix = 'CTA_noticias_noticia_collection';
+    protected $_eventObject = 'noticia_collection';
+
     protected function _construct()
     {
         $this->_init(Noticia::class, NoticiaResourceModel::class);
