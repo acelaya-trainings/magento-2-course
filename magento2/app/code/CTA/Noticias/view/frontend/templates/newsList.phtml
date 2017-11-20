@@ -1,13 +1,33 @@
-<?php
-/** @var \CTA\Noticias\Block\Prueba $this */
-//var_dump($this->getNoticias());
-
-//foreach ($this->getNoticias() as $title) {
-//    echo sprintf('<p>%s</p>', $title);
-//}
-?>
-
-
-<footer>
-    <div><?= $this->getPagerHtml() ?></div>
-</footer>
+<section id="cta_noticias">
+    <header>
+        <form name="buscador">
+            <label for="titulo">
+                Titulo
+            </label>
+            <input id="titulo" name="titulo" type="text">
+            <label for="fecha">
+                Fecha
+            </label>
+            <input id="fecha" name="fecha" type="date">
+            <button><?= __('Buscar') ?></button>
+        </form>
+    </header>
+    <article>
+        <figure>
+            <img src="">
+        </figure>
+        <header>
+            <h2>Titulo</h2>
+            <time>Fecha Publicacion</time>
+        </header>
+        aklajslkajlask
+        <footer>
+            <a href="#">Leer más</a>
+        </footer>
+    </article>
+    <footer>
+        <div id ="paginacion">
+            <div><?=$this->getPagerHtml()?></div>
+        </div>
+    </footer>
+</section>

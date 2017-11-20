@@ -41,10 +41,27 @@ class Prueba extends Template
         $post = $this->noticiaFactory->create();
         $page = (int) $this->getRequest()->getParam('p', 1);
         $limit = (int) $this->getRequest()->getParam('limit', 10);
+        $title = '%' . $this->getRequest()->getParam('titulo', '') . '%';
+        $date = $this->getRequest()->getParam('date', '');
 
         $collection = $post->getCollection();
         $collection->addFieldToSelect('titulo');
         $collection->getSelect()->limitPage($page, $limit);
+
+        // Apply "OR" conditions
+//        $collection->addFieldToFilter([
+//            [
+//                'attribute' => 'titulo',
+//                'like' => $title,
+//            ],
+//            [
+//                'attribute' => 'fechaPublicacion',
+//                'eq' => $date,
+//            ],
+//        ]);
+        $collection->addFieldToFilter('titulo', ['like' => $title]);
+//        $collection->addFieldToFilter('fechaPublicacion', ['eq' => $date]);
+
         return $collection;
     }
 
