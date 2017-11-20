@@ -12,19 +12,24 @@
             <button><?= __('Buscar') ?></button>
         </form>
     </header>
-    <article>
-        <figure>
-            <img src="">
-        </figure>
-        <header>
-            <h2>Titulo</h2>
-            <time>Fecha Publicacion</time>
-        </header>
-        aklajslkajlask
-        <footer>
-            <a href="#">Leer más</a>
-        </footer>
-    </article>
+
+    <?php foreach ($this->getNoticiasCollection() as $article): ?>
+        <article>
+            <figure>
+                <img src="">
+            </figure>
+            <header>
+                <h2>Titulo</h2>
+                <time>Fecha Publicacion</time>
+            </header>
+            aklajslkajlask
+            <footer>
+                <a href="#">Leer más</a>
+            </footer>
+        </article>
+        <hr>
+    <?php endforeach; ?>
+
     <footer>
         <div id ="paginacion">
             <div><?=$this->getPagerHtml()?></div>
