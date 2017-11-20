@@ -9,34 +9,35 @@
 namespace CTA\Noticias\Block;
 
 use CTA\Noticias\Model\Noticia;
-use CTA\Noticias\Model\ResourceModel\Noticia as NoticiaResourceModel;
+use CTA\Noticias\Model\NoticiaFactory;
 use Magento\Framework\View\Element\Template;
 
 class Prueba extends Template
 {
     /**
-     * @var Noticia
+     * @var NoticiaFactory
      */
     private $noticia;
-    /**
-     * @var NoticiaResourceModel
-     */
-    private $noticiaResource;
 
     public function __construct(
         Template\Context $context,
-        Noticia $noticia,
-        NoticiaResourceModel $noticiaResource,
+        NoticiaFactory $noticia,
         array $data = []
     ) {
         parent::__construct($context, $data);
         $this->noticia = $noticia;
-        $this->noticiaResource = $noticiaResource;
     }
 
     public function getNoticias()
     {
-        return 'Foo';
-        return $this->noticia->getCollection();
+        $collection = $this->noticia->create()->getCollection();
+        $collection->addFieldToSelect('titulo');
+        $data = [];
+
+        foreach ($collection as $item) {
+            $data[] = $item->getData();
+        }
+
+        return $data;
     }
 }
