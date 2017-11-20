@@ -61,7 +61,7 @@ class Prueba extends Template
     protected function _prepareLayout()
     {
         parent::_prepareLayout();
-        $this->pageConfig->getTitle()->set('Listado noticias');
+        $this->pageConfig->getTitle()->set(__('Listado noticias'));
 
         $collection = $this->getNoticiasCollection();
         if (count($collection) > 0) {
