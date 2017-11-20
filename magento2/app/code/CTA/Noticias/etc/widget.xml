@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <widget class="CTA\Noticias\Block\Widget\Post" id="cta_noticias_widget">
+        <label translate="true">Widget de Noticias</label>
+        <description translate="true">Widget para mostrar las últimas noticias</description>
+        <parameters>
+            <parameter name="titulo" visible="true" xsi:type="text">
+                <label translate="true">Dame un nombre</label>
+            </parameter>
+            <parameter name="numero" visible="true" xsi:type="text">
+                <label translate="true">Número de noticias</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
