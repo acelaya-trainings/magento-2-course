@@ -3,6 +3,7 @@
 ## use command bin/magento deploy:mode:set to switch modes
 
 #   SetEnv MAGE_MODE developer
+# SetEnv MAGE_PROFILER "html"
 
 ############################################
 ## uncomment these lines for CGI mode
