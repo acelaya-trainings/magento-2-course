@@ -1,3 +1,4 @@
+console.log('Loading!');
 define([
     'ko',
     'uiComponent',
@@ -5,11 +6,12 @@ define([
     'mage/storage'
 ], function (ko, Component, urlBuilder,storage) {
     'use strict';
+
     var id=1;
     return Component.extend({
 
         defaults: {
-            template: 'CTA_Noticias/template/plantilla.phtml'
+            template: 'CTA_Noticias/plantilla.phtml'
         },
 
         productList: ko.observableArray([]),

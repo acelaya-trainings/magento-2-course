@@ -8,21 +8,17 @@
 
 namespace CTA\Noticias\Block;
 
-use Magento\Checkout\Block\Checkout\LayoutProcessorInterface;
 use Magento\Framework\View\Element\Template;
 
 class Test extends Template
 {
-    /**
-     * @var LayoutProcessorInterface[]
-     */
     private $layoutProcessors;
 
-    public function __construct(Template\Context $context, array $layoutProcessors, array $data = [])
+    public function __construct(Template\Context $context, array $layoutProcessors = [], array $data = [])
     {
-        parent::__construct($context, $data);
         $this->layoutProcessors = $layoutProcessors;
         $this->jsLayout = (array) ($data['jsLayout'] ?? []);
+        parent::__construct($context, $data);
     }
 
     public function getJsLayout()
