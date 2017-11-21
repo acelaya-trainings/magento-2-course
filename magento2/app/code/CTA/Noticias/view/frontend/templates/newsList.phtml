@@ -13,6 +13,9 @@
         </form>
     </header>
 
+    <?php if ($this->getNoticiasCollection()->count() === 0): ?>
+        <p class="empty-articles-message"><?= __('No hay artículos') ?></p>
+    <?php endif; ?>
     <?php foreach ($this->getNoticiasCollection() as $article): ?>
         <article>
             <figure>

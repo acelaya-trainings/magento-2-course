@@ -1,0 +1,11 @@
+#cta_noticias article h2 {
+    color: red;
+}
+
+#cta_noticias .empty-articles-message {
+    padding: 6px 12px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin-top: 20px;
+}
