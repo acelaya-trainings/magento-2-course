@@ -5,5 +5,8 @@
         <route id="noticias" frontName="noticias">
             <module name="CTA_Noticias" />
         </route>
+        <route id="knockout" frontName="knockout">
+            <module name="CTA_Noticias" />
+        </route>
     </router>
 </config>
