@@ -2,11 +2,11 @@
     <header>
         <form name="buscador">
             <label for="titulo">
-                Titulo
+                <?= __('Titulo') ?>
             </label>
             <input id="titulo" name="titulo" type="text">
             <label for="fecha">
-                Fecha
+                <?= __('Fecha') ?>
             </label>
             <input id="fecha" name="fecha" type="date">
             <button><?= __('Buscar') ?></button>
@@ -19,12 +19,12 @@
                 <img src="">
             </figure>
             <header>
-                <h2>Titulo</h2>
-                <time>Fecha Publicacion</time>
+                <h2><?= $article['titulo'] ?></h2>
+                <time><?= __('Fecha Publicacion') ?>: <?= $article['fechaPublicacion'] ?></time>
             </header>
-            aklajslkajlask
+            <i>content...</i>
             <footer>
-                <a href="#">Leer más</a>
+                <a href="#"><?= __('Leer más') ?></a>
             </footer>
         </article>
         <hr>
@@ -32,7 +32,7 @@
 
     <footer>
         <div id ="paginacion">
-            <div><?=$this->getPagerHtml()?></div>
+            <div><?= $this->getPagerHtml() ?></div>
         </div>
     </footer>
 </section>

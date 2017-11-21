@@ -45,7 +45,6 @@ class Prueba extends Template
         $date = $this->getRequest()->getParam('date', '');
 
         $collection = $post->getCollection();
-        $collection->addFieldToSelect('titulo');
         $collection->getSelect()->limitPage($page, $limit);
 
         // Apply "OR" conditions
