@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="empty" />
+    <referenceContainer name="page.wrapper">
+        <container name="header.container"
+                   as="header_container"
+                   label="Contenedor cabecera"
+                   htmlTag="header"
+                   before="main.content" />
+        <container name="page.top"
+                   as="page_top"
+                   label="Lo de arriba"
+                   after="header.container" />
+        <container name="footer-container"
+                   as="footer"
+                   label="Pie"
+                   htmlTag="footer"
+                   before="before.body.end" />
+    </referenceContainer>
+</layout>
