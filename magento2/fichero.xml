@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<xml>
+    <noticia>
+        <titulo>foo</titulo>
+        <fechaPublicacion>2016-12-31 23:00:00</fechaPublicacion>
+    </noticia>
+    <noticia>
+        <titulo>bar</titulo>
+        <fechaPublicacion>2017-02-01 23:00:00</fechaPublicacion>
+    </noticia>
+</xml>

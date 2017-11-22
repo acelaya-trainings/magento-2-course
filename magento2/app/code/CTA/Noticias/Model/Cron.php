@@ -19,11 +19,20 @@ class Cron extends Schedule
      * @var LoggerInterface
      */
     private $logger;
+    /**
+     * @var NoticiaFactory
+     */
+    private $noticiaFactory;
 
-    public function __construct(Context $context, Registry $registry, LoggerInterface $logger)
-    {
+    public function __construct(
+        Context $context,
+        Registry $registry,
+        LoggerInterface $logger,
+        NoticiaFactory $noticiaFactory
+    ) {
         parent::__construct($context, $registry);
         $this->logger = $logger;
+        $this->noticiaFactory = $noticiaFactory;
     }
 
     public function logHola()
@@ -35,10 +44,11 @@ class Cron extends Schedule
     {
         $xml = new \SimpleXMLElement('<xml />');
 
-        for ($i = 0; $i < 10; $i++) {
+        $noticias = $this->noticiaFactory->create()->getCollection();
+        foreach ($noticias as $noticiaData) {
             $noticia = $xml->addChild('noticia');
-            $noticia->addChild('titulo', sprintf('titulo %s', $i));
-            $noticia->addChild('foto', sprintf('foto %s', $i));
+            $noticia->addChild('titulo', $noticiaData['titulo']);
+            $noticia->addChild('fechaPublicacion', $noticiaData['fechaPublicacion']);
         }
         $result = $xml->asXML();
 
