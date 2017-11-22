@@ -28,6 +28,22 @@ class Cron extends Schedule
 
     public function logHola()
     {
-        $this->logger->debug('Hola');
+        $this->logger->info('Hola');
+    }
+
+    public function generarXML()
+    {
+        $xml = new \SimpleXMLElement('<xml />');
+
+        for ($i = 0; $i < 10; $i++) {
+            $noticia = $xml->addChild('noticia');
+            $noticia->addChild('titulo', sprintf('titulo %s', $i));
+            $noticia->addChild('foto', sprintf('foto %s', $i));
+        }
+        $result = $xml->asXML();
+
+        $this->logHola();
+        $ruta = __DIR__ . '/../../../../../fichero.xml';
+        \file_put_contents($ruta, $result);
     }
 }

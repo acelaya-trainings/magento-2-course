@@ -4,7 +4,7 @@
     <group id="default">
         <job name="cta_noticias_log"
              instance="CTA\Noticias\Model\Cron"
-             method="logHola">
+             method="generarXML">
             <schedule>
                 * * * * *
             </schedule>
