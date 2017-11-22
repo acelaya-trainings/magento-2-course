@@ -7,3 +7,4 @@ favicon.ico
 test_sockets.php
 testmysql.php
 vendor
+/index.php
